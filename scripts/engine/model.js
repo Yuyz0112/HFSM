@@ -67,9 +67,9 @@ mpModel.setStateCondition(STATES.MP[0], (player) => {
   return player.MP < QUICK_SPELL.cost;
 }).setStateCondition(STATES.MP[1], (player) => {
   const { MP } = player;
-  return MP <= MP_THRESHOLD && MP >= QUICK_SPELL.cost;
+  return MP < MP_THRESHOLD && MP >= QUICK_SPELL.cost;
 }).setStateCondition(STATES.MP[2], (player) => {
-  return player.MP > MP_THRESHOLD;
+  return player.MP >= MP_THRESHOLD;
 }).addTransitions(STATES.MP[0], [
   {
     action: 'takeMPPotion',

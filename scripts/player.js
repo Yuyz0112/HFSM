@@ -83,13 +83,13 @@ export default class Player {
     if (!actionChecker(nextAction, this)) {
       log({
         name: '[Assert.Fail]',
-        content: `Action ${nextAction.action} failed.`,
+        content: `Action ${nextAction.action} assertion failed.`,
         type: 'error',
       });
     } else {
       log({
         name: '[Assert.Pass]',
-        content: `Action ${nextAction.action} passed.`,
+        content: `Action ${nextAction.action} assertion passed.`,
         type: 'success',
       });
     }
