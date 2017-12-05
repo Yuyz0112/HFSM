@@ -2,10 +2,12 @@
   "name": "hfsm",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "babel index.js -w -o dist.js --presets=env"
+    "bundle": "rollup scripts/main.js -w --output.format iife --output.file bundle.js",
+    "babel": "babel bundle.js -w -o dist.js --presets=env",
+    "watch": "concurrently --kill-others \"npm run bundle\" \"npm run babel\""
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,8 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "eslint": "^4.12.1"
+    "concurrently": "^3.5.1",
+    "eslint": "^4.12.1",
+    "rollup": "^0.52.0"
   }
 }

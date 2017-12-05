@@ -3,12 +3,12 @@ module.exports = {
         "browser": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
     "parserOptions": {
+        "sourceType": "module",
         "ecmaVersion": 8,
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true
-        }
+        },
     },
     "extends": "eslint:recommended",
     "rules": {
